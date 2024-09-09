@@ -1,7 +1,7 @@
 # ST540204 infer.py
 A repository for finding the posterior distribution over Eruption Source Parameters (ESPs, here, plume height and $SO_2$ flux), as well as ground $SO_2$ concentration, in light of observations, for a given atmospheric dispersion emulator. This can be thought of as a kind of Source Term Estimation (STE) or Data Assimilation (DA), resulting in probabilistic estimates of ESPs and probabilistic forecasts of air quality that are then used for calculating concentration exceedence probabilities. Bayesian inference is performed using Stan, which allows empirical relationships (e.g. between plume height and ambient atmospheric conditions) to be included in the model (not yet implemented). This repository consists of `pyinfer`, a package that contains some helper classes, including 
 
- * `Forecast`, a class that wraps the pre and post processing of data for performing Bayesian inference with Stan, and provides some functions for visuaslisation and export serving using the API in ST540206.
+ * `Forecast`, a class that wraps the pre and post processing of data for performing Bayesian inference with Stan, and provides some functions for visuaslisation and export serving using the API in ST540105.
 
 The useage of `Forecast` is illustrated in the Jupyter notebook `notebook.ipynb`, and the script `infer.py` is the application of the library for the purposes of DTC4. 
 
@@ -14,7 +14,7 @@ The useage of `Forecast` is illustrated in the Jupyter notebook `notebook.ipynb`
 ## Package structure
 
 
-    ST540204/
+    ST540104/
     ├── environment.yaml      - configures conda environment with required packages
     ├── LICENSE               - GPL 3
     ├── notebook.ipynb        - example use of the pyem package
@@ -30,7 +30,7 @@ The useage of `Forecast` is illustrated in the Jupyter notebook `notebook.ipynb`
 ## To download the repository
 Clone the repository to your machine
 
-    git clone https://github.com/profskipulag/ST540204.git
+    git clone https://github.com/profskipulag/ST540104.git
 
 You will be asked for your username and password. For the password github now requires a token:
 - on github, click yur user icon in the top right corner
@@ -46,10 +46,10 @@ Create a new conda environment from the environment.yaml file:
 
 Activate the environment
 
-    conda activate st540204
+    conda activate st540104
     
 Launch the notebook server
 
     jupyter notebook
     
-Navigate to the st540204 directory and click the file `notebook.ipynb` to launch it.
+Navigate to the st540104 directory and click the file `notebook.ipynb` to launch it.
