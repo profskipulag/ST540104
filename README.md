@@ -1,4 +1,4 @@
-# ST540204 infer.py
+# ST540104 infer.py
 A repository for finding the posterior distribution over Eruption Source Parameters (ESPs, here, plume height and $SO_2$ flux), as well as ground $SO_2$ concentration, in light of observations, for a given atmospheric dispersion emulator. This can be thought of as a kind of Source Term Estimation (STE) or Data Assimilation (DA), resulting in probabilistic estimates of ESPs and probabilistic forecasts of air quality that are then used for calculating concentration exceedence probabilities. Bayesian inference is performed using Stan, which allows empirical relationships (e.g. between plume height and ambient atmospheric conditions) to be included in the model (not yet implemented). This repository consists of `pyinfer`, a package that contains some helper classes, including 
 
  * `Forecast`, a class that wraps the pre and post processing of data for performing Bayesian inference with Stan, and provides some functions for visuaslisation and export serving using the API in ST540105.
