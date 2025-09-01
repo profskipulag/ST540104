@@ -165,14 +165,14 @@ class Forecast:
     def run_prior(self):
 
         self.stan_data['LIKELIHOOD'] = 0
-        self.prior_model = stan.build(program_code=self.stan_code, data=self.stan_data)
+        self.prior_model = stan.build(program_code=self.stan_code, data=self.stan_data, random_seed=0)
         self.prior_fit = self.prior_model.sample(num_chains=4, num_samples=500, delta=0.99)
         
 
     def run_posterior(self):
 
         self.stan_data['LIKELIHOOD'] = 1
-        self.posterior_model = stan.build(program_code=self.stan_code, data=self.stan_data)
+        self.posterior_model = stan.build(program_code=self.stan_code, data=self.stan_data, random_seed=0)
         self.posterior_fit = self.posterior_model.sample(num_chains=4, num_samples=500, delta=0.99)
 
     def get_inference_data(self):
@@ -247,7 +247,11 @@ class Forecast:
         plt.tight_layout()
         
 
+    def to_netcdf(self, filename):
 
+       # self.inference_data.observed_data = self.inference_data.observed_data.unstack("obs_conc_dim_0")
+    
+        self.inference_data.to_netcdf(filename)
         
     
                 

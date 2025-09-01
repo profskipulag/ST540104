@@ -2,7 +2,8 @@ pyf3d/*
 mnt/*
 pyem/*
 pywaf/*
-
+*.nc
+build/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
